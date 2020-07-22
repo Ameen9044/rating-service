@@ -12,9 +12,9 @@ phases:
     commands:
       - echo Build started on `date`
       - mvn clean
-      - mvn package
+      - mvn package -DskipTests
 artifacts:
   files:
-    - target/my-app-1.0-SNAPSHOT.jar
+    - target/rating-data-service-1.0-SNAPSHOT.jar
     - appspec.yml
   discard-paths: yes
