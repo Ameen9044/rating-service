@@ -12,7 +12,7 @@ phases:
     commands:
       - echo Build started on `date`
       - mvn clean
-      - mvnw package -DskipTests
+      - mvn install
 artifacts:
   files:
     - target/rating-data-service-1.0-SNAPSHOT.jar
