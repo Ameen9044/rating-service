@@ -6,15 +6,17 @@ phases:
       java: corretto8
     commands:
       - echo installing maven
-      - yum update -y
-      - yum install -y maven
+      - apt-get update -y
+      - apt-get install -y maven
   build:
     commands:
       - echo Build started on `date`
-      - mvn clean
-      - mvn install
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - mvn package
+      - mv target/rating-data-service-0.0.1-SNAPSHOT.war rating-data-service-0.0.1-SNAPSHOT.jar
 artifacts:
   files:
-    - target/rating-data-service-1.0-SNAPSHOT.jar
-    - appspec.yml
-  discard-paths: yes
+    - rating-data-service-0.0.1-SNAPSHOT.jar
+    - .ebextentions/**/*
