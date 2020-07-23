@@ -20,7 +20,8 @@ public class RatingsResource {
                 new Rating("1234",4),
                 new Rating("5678",5),
                 new Rating("5678",6),
-                new Rating("10122",8)
+                new Rating("10122",8),
+                new Rating("1443",9)
         );
         return ratings;
     }
